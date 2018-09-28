@@ -11,6 +11,7 @@ browsers_to_test = (
     'chrome',
     'ie',
     'firefox',
+    'firefox_nght',
     'jeegurda'   # just to check incorrect browser option
 )
 
@@ -22,6 +23,8 @@ def my_driver(request):
             wd = webdriver.Chrome()
         elif br.lower() == 'firefox':
             wd = webdriver.Firefox(capabilities={"marionette": False})
+        elif br.lower() == 'firefox_nght':
+            wd = webdriver.Firefox(firefox_binary="c:\\Program Files\\Firefox Nightly\\firefox.exe")
         elif br.lower() == 'ie':
             wd = webdriver.Ie()
         else:
