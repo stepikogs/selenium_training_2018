@@ -22,6 +22,7 @@ def my_driver(request):
             print('Incorrect browser requested. Running in Chrome instead.')
             wd = webdriver.Chrome()
         print(wd.capabilities)
+        wd.implicitly_wait(5)
         request.addfinalizer(wd.quit)
         return wd
     return browser
